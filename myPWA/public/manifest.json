@@ -1,10 +1,10 @@
 {
-    "name": "VSCode Extension Catalogue",
-    "short_name": "vscodeextcat",
+    "name": "Universe/Character index",
+    "short_name": "U/C index",
     "start_url": "/",
     "display": "standalone",
-    "background_color": "#fdfdfd",
-    "theme_color": "#14E6DD",
+    "background_color": "#222222",
+    "theme_color": "#522081",
     "orientation": "portrait-primary",
     "icons": [
     {

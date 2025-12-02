@@ -20,7 +20,6 @@ self.addEventListener("install", (installEvt) => {
         caches
             .open(CATALOGUE_ASSETS)
             .then((cache) => {
-                console.log(cache)
                 cache.addAll(assets);
     })
         .then(self.skipWaiting())

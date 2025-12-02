@@ -1,32 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <meta http-equiv="Content-Security-Policy" content="script-src 'self';">
-    <link rel="stylesheet" href="css/style.css" />
-    <title>VSCode Extension Catalogue</title>
-    <link rel="manifest" href="manifest.json" />
-    <link rel="icon" type="image/x-icon" href="/images/favicon.png">
+  <meta charset="UTF-8">
+  <title>Fictional Universe Builder</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <main>
-    <nav>
-        <img src="images/logo.png"/>
-        <h1>VSCode Extensions</h1>
-        <ul class="topnav">
-        <li><a href="#">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="suggest.html">Suggest</a></li>
-        </ul>
-    </nav>
-    <div class="container">
-        
+  <header>
+    <img src="/images/logo.png" alt="Logo" id="homeLogo" style="cursor:pointer;">
+    <h1>Fictional Universe Builder</h1>
+    <button class="btn create-universe-btn">Create a Universe</button>
+  </header>
+
+  <!-- Home Screen -->
+  <section id="homeScreen" class="screen page">
+    <div id="universeList" class="container"></div>
+  </section>
+
+<!-- Universe Detail Screen -->
+<section id="universeDetailScreen" class="screen page" style="display:none;">
+  <div class="universe-layout">
+    <!-- Left Panel: Universe Info -->
+    <div class="universe-info">
+      <h2 id="universeNameMiddle"></h2>
+      <img src="" alt="Universe Image" class="card-image" id="universeImageMiddle">
+      <p class="card-about" id="universeBioMiddle"></p>
     </div>
 
+    <!-- Right Panel: Character Management -->
+    <div class="character-panel">
+      <button class="btn create-character-btn">Create a Character for this Universe</button>
+      <h3>Characters belonging to this universe:</h3>
+      <div id="characterListMiddle" class="container"></div>
+    </div>
+  </div>
+</section>
 
-    </main>
-    <script src="js/app.js"></script>
+  <!-- Character Detail Screen -->
+  <section id="characterDetailScreen" class="screen page" style="display:none;">
+    <h4 id="characterNameBottom"></h4>
+    <img src="" alt="Character Image" class="card-image" id="characterImageBottom">
+    <p class="card-about" id="characterBioBottom"></p>
+    <p id="characterUniverseBottom"></p>
+  </section>
+
+  <!-- Universe Creation Screen -->
+  <section id="createUniverseScreen" class="screen page" style="display:none;">
+    <h3>Create a Universe</h3>
+    <input type="text" placeholder="Insert Universe Name" class="btn" id="universeNameInput">
+    <input type="text" placeholder="Insert Universe Bio" class="btn" id="universeBioInput">
+    <input type="file" accept="image/*" class="btn" id="universeImageInput">
+    <button class="btn" id="createUniverseBtn">Create Universe</button>
+  </section>
+
+  <!-- Character Creation Screen -->
+  <section id="createCharacterScreen" class="screen page" style="display:none;">
+    <h3>Create a Character</h3>
+    <p id="characterUniverseLabel"></p>
+    <input type="text" placeholder="Insert Character Name" class="btn" id="characterNameInput">
+    <input type="text" placeholder="Insert Character Bio" class="btn" id="characterBioInput">
+    <input type="file" accept="image/*" class="btn" id="characterImageInput">
+    <button class="btn" id="createCharacterBtn">Create Character</button>
+  </section>
+
+  <script src="js/app.js" defer></script>
 </body>
 </html>
