@@ -1,60 +1,47 @@
-const assets = [
+const assetsToCache = [
     "/",
     "css/style.css",
     "js/app.js",
     "/images/logo.png",
     "/images/blog2.jpg",
-    "/images/favicon.jpg",
     "/icons/icon-128x128.png",
     "/icons/icon-192x192.png",
     "/icons/icon-384x384.png",
     "/icons/icon-512x512.png"
 ];
 
+const cachedAssetsList = "cachedAssetsList"; // Name of the cache.
 
-const CATALOGUE_ASSETS = "catalogue-assets";
-
-
-self.addEventListener("install", (installEvt) => {
-    installEvt.waitUntil(
-        caches
-            .open(CATALOGUE_ASSETS)
-            .then((cache) => {
-                cache.addAll(assets);
+self.addEventListener("install", (installEvt) => { // When serviceWorker is installed.
+    installEvt.waitUntil(caches.open(cachedAssetsList).then((cacheEditor) => { // Don't go to the next step until.
+        return cacheEditor.addAll(assetsToCache); // You open the cache and write all the files in the list into it.
     })
-        .then(self.skipWaiting())
-        .catch((e) => {
-        console.log(e);
-        })
-    );
+    .then(() => {
+        self.skipWaiting(); // Then skip the waiting step.
+    })
+    .catch((error) => {
+        console.log(error);
+    }));
 });
 
-
-self.addEventListener("activate", function (evt) {
-        evt.waitUntil(
-            caches
-                .keys()
-                .then((keyList) => {
-                    return Promise.all(
-                        keyList.map((key) => {
-                            if (key === CATALOGUE_ASSETS) {
-                                console.log("Removed old cache from", key);
-                                    return caches.delete(key);
+self.addEventListener("activate", (activateEvt) => { // Go to activate.
+    activateEvt.waitUntil(caches.keys().then((existingCacheLists) => { // Don't end activation step until.
+        return Promise.all(existingCacheLists.map((key) => {
+            if (key !== cachedAssetsList) { // Check if any of the saved caches don't have the same name as the current one.
+                console.log("Removed old cache from", key);
+                return caches.delete(key); // And delete them if True.
             }
-        })
-    );
-})
-    .then(() => self.clients.claim())
-);
+        }));
+    })
+    .then(() => self.clients.claim())); // Take control of the tab once this happens.
 });
 
-
-self.addEventListener("fetch", function (evt) {
-    evt.respondWith(
-        fetch(evt.request).catch(() => {
-            return caches.open(CATALOGUE_ASSETS).then((cache) => {
-            return cache.match(evt.request);
-    });
-    })
-);
+self.addEventListener("fetch", (fetchEvt) => { // When fetch event is fired.
+    fetchEvt.respondWith(fetch(fetchEvt.request).catch((error) => { // Respond with what the server serves for the request.
+        console.log("Server dont wanna play along cuz: " + error);
+        return caches.open(cachedAssetsList).then((cacheEditor) => { // If theres an error when getting the requested file.
+            console.log("Unable to fetch requested file, serving from cache instead.")
+            return cacheEditor.match(fetchEvt.request); // Try get it from the cache instead (maybe offline).
+        });
+    }));
 })

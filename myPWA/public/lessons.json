@@ -1,0 +1,44 @@
+{
+  "programming_fundamentals": {
+    "1": "asdf jkl; asdf jkl; ffff jjjj ffff jjjj asdfg hjkl",
+    "2": "variable constant function loop condition array string integer",
+    "3": "variable store data constant immutable function reusable code loop repeat statements",
+    "4": "Variables store data that can change during program execution while constants hold immutable values. Functions organize code into reusable blocks. Loops repeat statements multiple times based on conditions.",
+    "5": "Programming fundamentals form the foundation of all software development. Variables and constants manage data, allowing programs to remember and manipulate information throughout execution. Functions encapsulate logic into reusable components, improving code organization and maintainability. Control structures including loops and conditional statements direct program flow based on logic and decisions. Understanding these core concepts enables programmers to solve problems systematically and write code that scales from simple scripts to complex applications. Mastery of fundamentals distinguishes efficient developers from those who struggle with larger codebases."
+  },
+  "oop": {
+    "1": "asdf jkl; ffff jjjj asdfg hjkl asdf jkl;",
+    "2": "class object inheritance polymorphism encapsulation abstraction method",
+    "3": "class blueprint object instance inheritance parent child polymorphism different types",
+    "4": "Classes provide blueprints for creating objects with shared properties and methods. Inheritance enables code reuse through parent-child relationships. Polymorphism allows objects of different types to respond to identical method calls.",
+    "5": "Object-oriented programming structures code around objects that combine data and behaviour. Classes serve as blueprints defining object structure and capabilities. Inheritance hierarchies enable code reuse by establishing parent-child relationships where subclasses inherit and extend parent functionality. Polymorphism allows different object types to respond to identical method calls, implementing appropriate behaviour for each type. Encapsulation bundles related data and methods together while hiding internal complexity. Abstraction presents simplified interfaces masking implementation details. These principles enable developers to build large, maintainable systems where code is organized logically and relationships between components are clear and intentional."
+  },
+  "mechatronics": {
+    "1": "asdf jkl; asdfg hjkl ffff jjjj asdf asdf",
+    "2": "sensor actuator input output microcontroller signal processing feedback",
+    "3": "sensor detect physical change actuator cause physical action microcontroller process data",
+    "4": "Sensors detect physical changes in the environment and convert them to digital signals. Actuators cause physical actions based on digital commands. Microcontrollers process input signals and generate output commands.",
+    "5": "Mechatronics integrates mechanical systems with electronics and software to create automated solutions. Sensors detect physical phenomena including temperature, pressure, motion, and light, converting real-world data into digital signals. Microcontrollers process these signals using programmed logic to make intelligent decisions. Actuators execute commands by producing mechanical motion or control. This feedback loop between sensing, processing, and action enables sophisticated automation in robotics, manufacturing, and consumer devices. Understanding the integration between hardware and software allows programmers to develop systems that interact meaningfully with the physical world."
+  },
+  "secure_architecture": {
+    "1": "asdf jkl; ffff jjjj asdfg hjkl asdf jkl;",
+    "2": "authentication authorization encryption vulnerability vulnerability assessment threat model",
+    "3": "authentication verify identity authorization control access encryption protect data",
+    "4": "Authentication verifies that users are who they claim to be. Authorization determines what authenticated users are permitted to access. Encryption protects sensitive data from unauthorized viewing or modification.",
+    "5": "Secure software architecture prioritizes protection of systems and data from unauthorized access and malicious attacks. Authentication mechanisms verify user identity through credentials, biometrics, or multi-factor systems. Authorization systems control what authenticated users can access based on roles and permissions. Encryption algorithms protect data in transit and at rest, rendering it unreadable without proper keys. Threat modeling identifies potential vulnerabilities before they become exploits. Security audits and vulnerability assessments discover weaknesses. Implementing defence-in-depth strategies with multiple security layers ensures that failure of one component does not compromise entire systems. Security awareness among developers fundamentally strengthens application resilience."
+  },
+  "web_programming": {
+    "1": "asdf jkl; asdfg hjkl ffff jjjj asdf asdf",
+    "2": "html css javascript dom api json http response request",
+    "3": "html structure css styling javascript interactivity dom manipulation api data exchange",
+    "4": "HTML provides semantic structure and content for web pages. CSS enables visual styling and responsive layouts. JavaScript adds interactivity through DOM manipulation and event handling.",
+    "5": "Web programming combines multiple technologies to create interactive experiences delivered through browsers. HTML structures content semantically, providing meaning to information. CSS transforms plain markup into polished visual designs with responsive layouts that adapt to different screen sizes. JavaScript brings interactivity through event listeners, DOM manipulation, and asynchronous operations. APIs enable communication between client-side applications and backend servers using JSON data exchange. HTTP protocols govern request-response cycles between browsers and servers. Modern frameworks like React, Vue, and Angular abstract common patterns, allowing developers to build complex single-page applications efficiently. Understanding the full web stack from frontend to backend integration is essential for professional web engineers."
+  },
+  "automation": {
+    "1": "asdf jkl; ffff jjjj asdfg hjkl asdf jkl;",
+    "2": "script workflow task scheduling batch process error handling logging monitoring",
+    "3": "script automate task workflow sequence steps task scheduling run jobs batch process",
+    "4": "Scripts automate repetitive tasks by executing a sequence of commands. Workflows coordinate multiple steps towards a goal. Task scheduling runs jobs at specific times or intervals.",
+    "5": "Software automation eliminates manual repetition by programming computers to execute tasks independently. Scripts encapsulate sequences of operations that accomplish goals without human intervention. Workflows orchestrate complex multi-step processes ensuring proper sequencing and error recovery. Task scheduling systems run automated processes at optimal times, such as batch jobs during off-peak hours. Error handling and logging track execution and alert administrators to failures. Monitoring systems observe running automation and trigger alerts when performance degrades. Continuous integration and deployment pipelines automate testing and release processes. Effective automation dramatically increases productivity, reduces human error, and frees developers for creative problem-solving rather than mechanical tasks."
+  }
+}

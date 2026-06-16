@@ -2,67 +2,118 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Fictional Universe Builder</title>
+  <title>Year 12 Typing Tutor</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <header>
-    <img src="/images/logo.png" alt="Logo" id="homeLogo" style="cursor:pointer;">
-    <h1>Fictional Universe Builder</h1>
-    <button class="btn create-universe-btn">Create a Universe</button>
+    <img id="homeLogo" src="/images/logo.png" alt="Logo" style="cursor: pointer;">
+    <h1>Typing Tutor</h1>
+    <div style="width: 40px;"></div>
   </header>
 
-  <!-- Home Screen -->
-  <section id="homeScreen" class="screen page">
-    <div id="universeList" class="container"></div>
-  </section>
-
-<!-- Universe Detail Screen -->
-<section id="universeDetailScreen" class="screen page" style="display:none;">
-  <div class="universe-layout">
-    <!-- Left Panel: Universe Info -->
-    <div class="universe-info">
-      <h2 id="universeNameMiddle"></h2>
-      <img src="" alt="Universe Image" class="card-image" id="universeImageMiddle">
-      <p class="card-about" id="universeBioMiddle"></p>
-    </div>
-
-    <!-- Right Panel: Character Management -->
-    <div class="character-panel">
-      <button class="btn create-character-btn">Create a Character for this Universe</button>
-      <h3>Characters belonging to this universe:</h3>
-      <div id="characterListMiddle" class="container"></div>
+  <!Lesson error stuff>
+  <div id="lessonsErrorContainer" class="error-overlay" style="display: none;">
+    <div class="error-dialog">
+      <h2>Unable to Load Lessons</h2>
+      <p>There was a problem loading the lesson content. This could be due to:</p>
+      <ul>
+        <li>Network connectivity issues</li>
+        <li>The lessons.json file is missing or corrupted</li>
+        <li>File permissions issues</li>
+      </ul>
+      <p>Please try refreshing the page or contact support if the problem persists.</p>
+      <button class="btn btn-primary" onclick="window.location.reload()">Refresh Page</button>
     </div>
   </div>
-</section>
 
-  <!-- Character Detail Screen -->
-  <section id="characterDetailScreen" class="screen page" style="display:none;">
-    <h4 id="characterNameBottom"></h4>
-    <img src="" alt="Character Image" class="card-image" id="characterImageBottom">
-    <p class="card-about" id="characterBioBottom"></p>
-    <p id="characterUniverseBottom"></p>
-  </section>
+  <!Home screen>
+  <div id="homeScreen" class="screen">
+    <div class="home-container">
+      <h2>Welcome to Typing Tutor</h2>
+      <p>Improve your typing speed and accuracy with targeted lessons.</p>
 
-  <!-- Universe Creation Screen -->
-  <section id="createUniverseScreen" class="screen page" style="display:none;">
-    <h3>Create a Universe</h3>
-    <input type="text" placeholder="Insert Universe Name" class="btn" id="universeNameInput">
-    <input type="text" placeholder="Insert Universe Bio" class="btn" id="universeBioInput">
-    <input type="file" accept="image/*" class="btn" id="universeImageInput">
-    <button class="btn" id="createUniverseBtn">Create Universe</button>
-  </section>
+      <div class="form-group">
+        <label for="topicSelect">Select Topic:</label>
+        <select id="topicSelect">
+          <option value="">-- Choose a Topic --</option>
+          <option value="programming_fundamentals">Programming Fundamentals</option>
+          <option value="oop">Object-Oriented Programming</option>
+          <option value="mechatronics">Programming Mechatronics</option>
+          <option value="secure_architecture">Secure Software Architecture</option>
+          <option value="web_programming">Programming for the Web</option>
+          <option value="automation">Software Automation</option>
+          <option value="nesa_terms">NESA Key Terms</option>
+        </select>
+      </div>
 
-  <!-- Character Creation Screen -->
-  <section id="createCharacterScreen" class="screen page" style="display:none;">
-    <h3>Create a Character</h3>
-    <p id="characterUniverseLabel"></p>
-    <input type="text" placeholder="Insert Character Name" class="btn" id="characterNameInput">
-    <input type="text" placeholder="Insert Character Bio" class="btn" id="characterBioInput">
-    <input type="file" accept="image/*" class="btn" id="characterImageInput">
-    <button class="btn" id="createCharacterBtn">Create Character</button>
-  </section>
+      <div class="form-group">
+        <label for="difficultySelect">Select Difficulty:</label>
+        <select id="difficultySelect">
+          <option value="">-- Choose Difficulty --</option>
+          <option value="1">Level 1 - Beginner</option>
+          <option value="2">Level 2 - Intermediate</option>
+          <option value="3">Level 3 - Advanced</option>
+          <option value="4">Level 4 - Expert</option>
+          <option value="5">Level 5 - Master</option>
+        </select>
+      </div>
 
-  <script src="js/app.js" defer></script>
+      <button id="startLessonBtn" class="btn btn-primary">Start Lesson</button>
+    </div>
+  </div>
+
+  <!Lesson screen>
+  <div id="lessonScreen" class="screen" style="display: none;">
+    <div class="lesson-container">
+      <div class="lesson-header">
+        <div class="lesson-info">
+          <span id="lessonTopic"></span> | <span id="lessonDifficulty"></span>
+        </div>
+        <div id="timerDisplay" class="timer">00:00</div>
+      </div>
+
+      <div class="lesson-text-container">
+        <div id="lessonText" class="lesson-text"></div>
+      </div>
+
+      <div class="form-group">
+        <label for="typingInput">Type here:</label>
+        <textarea id="typingInput" class="typing-input" placeholder="Start typing to begin..."></textarea>
+      </div>
+
+      <div class="lesson-buttons">
+        <button id="submitLessonBtn" class="btn btn-primary">Submit</button>
+        <button id="quitLessonBtn" class="btn">Quit Lesson</button>
+      </div>
+    </div>
+  </div>
+
+  <!Result screen>
+  <div id="resultsScreen" class="screen" style="display: none;">
+    <div class="results-container">
+      <h2>Lesson Complete!</h2>
+      <p id="completionMessage"></p>
+
+      <div class="results-grid">
+        <div class="result-card">
+          <div class="result-label">Words Per Minute</div>
+          <div id="wpmDisplay" class="result-value">0</div>
+        </div>
+
+        <div class="result-card">
+          <div class="result-label">Accuracy</div>
+          <div id="accuracyDisplay" class="result-value">0%</div>
+        </div>
+      </div>
+
+      <div class="results-buttons">
+        <button id="tryAgainBtn" class="btn btn-primary">Try Again</button>
+        <button id="homeBtn" class="btn">Home</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
 </body>
 </html>
