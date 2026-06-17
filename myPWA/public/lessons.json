@@ -3,8 +3,8 @@
     "1": "asdf jkl; asdf jkl; ffff jjjj ffff jjjj asdfg hjkl",
     "2": "variable constant function loop condition array string integer",
     "3": "variable store data constant immutable function reusable code loop repeat statements",
-    "4": "Variables store data that can change during program execution while constants hold immutable values. Functions organize code into reusable blocks. Loops repeat statements multiple times based on conditions.",
-    "5": "Programming fundamentals form the foundation of all software development. Variables and constants manage data, allowing programs to remember and manipulate information throughout execution. Functions encapsulate logic into reusable components, improving code organization and maintainability. Control structures including loops and conditional statements direct program flow based on logic and decisions. Understanding these core concepts enables programmers to solve problems systematically and write code that scales from simple scripts to complex applications. Mastery of fundamentals distinguishes efficient developers from those who struggle with larger codebases."
+    "4": "Variables store data that can change during program execution while constants hold immutable values. Functions organise code into reusable blocks. Loops repeat statements multiple times based on conditions.",
+    "5": "Programming fundamentals form the foundation of all software development. Variables and constants manage data, allowing programs to remember and manipulate information throughout execution. Functions encapsulate logic into reusable components, improving code organisation and maintainability. Control structures including loops and conditional statements direct program flow based on logic and decisions. Understanding these core concepts enables programmers to solve problems systematically and write code that scales from simple scripts to complex applications. Mastery of fundamentals distinguishes efficient developers from those who struggle with larger codebases."
   },
   "oop": {
     "1": "asdf jkl; ffff jjjj asdfg hjkl asdf jkl;",
@@ -22,10 +22,10 @@
   },
   "secure_architecture": {
     "1": "asdf jkl; ffff jjjj asdfg hjkl asdf jkl;",
-    "2": "authentication authorization encryption vulnerability vulnerability assessment threat model",
-    "3": "authentication verify identity authorization control access encryption protect data",
-    "4": "Authentication verifies that users are who they claim to be. Authorization determines what authenticated users are permitted to access. Encryption protects sensitive data from unauthorized viewing or modification.",
-    "5": "Secure software architecture prioritizes protection of systems and data from unauthorized access and malicious attacks. Authentication mechanisms verify user identity through credentials, biometrics, or multi-factor systems. Authorization systems control what authenticated users can access based on roles and permissions. Encryption algorithms protect data in transit and at rest, rendering it unreadable without proper keys. Threat modeling identifies potential vulnerabilities before they become exploits. Security audits and vulnerability assessments discover weaknesses. Implementing defence-in-depth strategies with multiple security layers ensures that failure of one component does not compromise entire systems. Security awareness among developers fundamentally strengthens application resilience."
+    "2": "authentication authorisation encryption vulnerability vulnerability assessment threat model",
+    "3": "authentication verify identity authorisation control access encryption protect data",
+    "4": "Authentication verifies that users are who they claim to be. Authorisation determines what authenticated users are permitted to access. Encryption protects sensitive data from unauthorised viewing or modification.",
+    "5": "Secure software architecture prioritises protection of systems and data from unauthorised access and malicious attacks. Authentication mechanisms verify user identity through credentials, biometrics, or multi-factor systems. Authorisation systems control what authenticated users can access based on roles and permissions. Encryption algorithms protect data in transit and at rest, rendering it unreadable without proper keys. Threat modelling identifies potential vulnerabilities before they become exploits. Security audits and vulnerability assessments discover weaknesses. Implementing defence-in-depth strategies with multiple security layers ensures that failure of one component does not compromise entire systems. Security awareness among developers fundamentally strengthens application resilience."
   },
   "web_programming": {
     "1": "asdf jkl; asdfg hjkl ffff jjjj asdf asdf",
